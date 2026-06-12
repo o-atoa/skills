@@ -1,0 +1,145 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "username": "qualquer",
+  "model": "anthropic/claude-sonnet-4-6",
+  "default_agent": "padrao",
+  "instructions": ["AGENTS.md"],
+
+  "agent": {
+    "padrao": {
+      "description": "Agente padrão do repositório. Segue AGENTS.md (melhor de 30+ prompts de sistema) e skills em pt-br.",
+      "mode": "primary"
+    },
+    "issues": {
+      "description": "Gerencia issues no GitHub em pt-br. Cria, tria e fecha issues com labels, prioridades e templates.",
+      "mode": "subagent",
+      "instructions": ["ISSUES.md"],
+      "prompt": "Você é um agente especializado em gerenciamento de issues. Use labels, prioridades e templates adequados conforme ISSUES.md."
+    },
+    "pr": {
+      "description": "Cria e revisa Pull Requests em pt-br. Mantém PRs pequenos, focados e com descrição clara.",
+      "mode": "subagent",
+      "instructions": ["PR.md"],
+      "prompt": "Você é um agente especializado em Pull Requests. Mantenha PRs pequenos e focados conforme PR.md."
+    },
+    "testes": {
+      "description": "Escreve e executa testes. Segue pirâmide de testes, Triple A e cobertura mínima definida em TESTS.md.",
+      "mode": "subagent",
+      "instructions": ["TESTS.md"],
+      "prompt": "Você é um agente especializado em testes. Siga TESTS.md: Triple A, pirâmide de testes, cobertura mínima."
+    },
+    "arquiteto": {
+      "description": "Projeta e documenta arquitetura de software. Cria ADRs e segue boas práticas de design.",
+      "mode": "subagent",
+      "instructions": ["ARQUITETURA.md"],
+      "prompt": "Você é um arquiteto de software. Documente decisões com ADRs conforme ARQUITETURA.md."
+    }
+  },
+
+  "skills": {
+    "paths": ["~/.config/opencode/skills"]
+  },
+
+  "references": {
+    "anthropic": {
+      "path": ".",
+      "description": "Instruções de sistema do Claude (Anthropic) em pt-br. Use para comportamento geral, modos de estilo e workflow."
+    },
+    "openai": {
+      "path": ".",
+      "description": "Instruções de sistema da OpenAI em pt-br. Use para personalidade, comunicação e boas práticas de codificação."
+    },
+    "devin": {
+      "path": ".",
+      "description": "Instruções do Devin AI em pt-br. Use para workflow com git, LSP, e paralelismo."
+    },
+    "cursor": {
+      "path": ".",
+      "description": "Instruções do Cursor IDE em pt-br. Use para edição de código, busca semântica e gerenciamento de tarefas."
+    },
+    "windsurf": {
+      "path": ".",
+      "description": "Instruções do Windsurf em pt-br. Use para memória persistente e workflow de terminal."
+    },
+    "cline": {
+      "path": ".",
+      "description": "Instruções do Cline em pt-br. Use para edições SEARCH/REPLACE e modo planejamento."
+    },
+    "manus": {
+      "path": ".",
+      "description": "Instruções do Manus AI em pt-br. Use para ciclo do agente e módulo de conhecimento."
+    },
+    "meta": {
+      "path": ".",
+      "description": "Instruções da Meta (Llama) em pt-br. Use para valores, tom e tratamento de tópicos sensíveis."
+    },
+    "xai": {
+      "path": ".",
+      "description": "Instruções do xAI (Grok) em pt-br. Use para busca na web, operadores avançados e anti-jailbreak."
+    },
+    "perplexity": {
+      "path": ".",
+      "description": "Instruções do Perplexity em pt-br. Use para pesquisa profunda e relatórios acadêmicos."
+    },
+    "google": {
+      "path": ".",
+      "description": "Instruções do Google Gemini em pt-br. Use para desenvolvimento web, Tailwind e React."
+    },
+    "bolt": {
+      "path": ".",
+      "description": "Instruções do Bolt.new em pt-br. Use para Supabase, RLS, migrações SQL e edge functions."
+    },
+    "factory": {
+      "path": ".",
+      "description": "Instruções do Factory/Droid em pt-br. Use para git workflow rigoroso e checklist de qualidade."
+    },
+    "dia": {
+      "path": ".",
+      "description": "Instruções do DIA AI em pt-br. Use para escrita colaborativa e classificação de dados."
+    },
+    "replit": {
+      "path": ".",
+      "description": "Instruções do Replit Agent em pt-br. Use para deploy e feedback de aplicações."
+    },
+    "samedev": {
+      "path": ".",
+      "description": "Instruções do Same.dev em pt-br. Use para inicialização de projetos e versionamento."
+    },
+    "hume": {
+      "path": ".",
+      "description": "Instruções do Hume Voice AI em pt-br. Use para interfaces de voz e análise emocional."
+    },
+    "brave": {
+      "path": ".",
+      "description": "Instruções do Brave Leo em pt-br. Use para formatação markdown e segurança."
+    },
+    "moonshot": {
+      "path": ".",
+      "description": "Instruções do Moonshot/Kimi em pt-br. Use para respostas concisas e código direto."
+    },
+    "mistral": {
+      "path": ".",
+      "description": "Instruções do Mistral/LeChat em pt-br. Use para navegação web e interpretador Python."
+    },
+    "minimax": {
+      "path": ".",
+      "description": "Instruções do MiniMax em pt-br. Use para raciocínio passo a passo e pensamento sistêmico."
+    },
+    "multion": {
+      "path": ".",
+      "description": "Instruções do MultiOn em pt-br. Use para automação de navegação em browser."
+    },
+    "cluely": {
+      "path": ".",
+      "description": "Instruções do Cluely em pt-br. Use para respostas diretas e formatação LaTeX."
+    },
+    "vercel": {
+      "path": ".",
+      "description": "Instruções do Vercel v0 em pt-br. Use para criação de aplicações web e componentes MDX."
+    },
+    "lovable": {
+      "path": ".",
+      "description": "Instruções do Lovable.dev em pt-br. Use para edição de aplicações web e integrações."
+    }
+  }
+}
