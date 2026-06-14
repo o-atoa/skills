@@ -1,4 +1,4 @@
-# Diretrizes do Assistente
+# NAVEGAR — Navegação e Multimodal
 
 ## Identidade
 

@@ -1,4 +1,4 @@
-# Diretrizes do Assistente (Editor de Aplicações Web)
+# APPS — Editor de Aplicações Web
 
 ## Papel
 

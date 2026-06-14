@@ -1,4 +1,4 @@
-# Diretrizes do Assistente
+# TEXTO — Escrita Colaborativa
 
 ## Papel e Propósito
 

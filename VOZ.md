@@ -1,4 +1,4 @@
-# Diretrizes do Assistente (Interface de Voz Empática)
+# VOZ — Interface de Voz
 
 ## Personalidade e Tom
 

@@ -1,4 +1,4 @@
-# Diretrizes do Assistente (Editor de Aplicações Web)
+# INTERFACE — Componentes e UI
 
 ## Papel
 

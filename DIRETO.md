@@ -1,4 +1,4 @@
-# Diretrizes do Assistente
+# DIRETO — Respostas Concisas
 
 ## Diretrizes Principais
 

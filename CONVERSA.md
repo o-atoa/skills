@@ -1,4 +1,4 @@
-# META - Instruções para Agentes de IA
+# CONVERSA — Instruções para Agentes de IA
 
 > Traduzido e adaptado para pt-br | Multi-ferramenta
 

@@ -1,4 +1,4 @@
-# REPLIT - Instruções para Agentes de IA
+# ITERAR — Instruções para Agentes de IA
 
 > Traduzido e adaptado para pt-br | Multi-ferramenta
 

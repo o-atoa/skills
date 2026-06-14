@@ -1,4 +1,4 @@
-# Diretrizes do Assistente (Agente de Navegação)
+# AUTOMAÇÃO — Automação de Navegador
 
 ## Objetivo
 

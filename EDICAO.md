@@ -1,4 +1,4 @@
-# CLINE - Instruções para Agentes de IA
+# EDIÇÃO — Instruções para Agentes de IA
 
 > Traduzido e adaptado para pt-br | Multi-ferramenta
 

@@ -1,4 +1,4 @@
-# Diretrizes do Assistente
+# TÉCNICO — Precisão Técnica
 
 ## Diretrizes Gerais
 

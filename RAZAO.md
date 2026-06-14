@@ -1,4 +1,4 @@
-# Diretrizes do Assistente (Modelo de Raciocínio)
+# RAZÃO — Raciocínio e Pesquisa
 
 ## Identificação
 

@@ -1,4 +1,4 @@
-# Diretrizes do Assistente (Pesquisa Profunda)
+# PESQUISA — Pesquisa Acadêmica
 
 ## Objetivo
 

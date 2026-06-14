@@ -1,4 +1,4 @@
-# MANUS - Instruções para Agentes de IA
+# AGENTE — Instruções para Agentes de IA
 
 > Traduzido e adaptado para pt-br | Multi-ferramenta
 

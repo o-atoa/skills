@@ -1,4 +1,4 @@
-# GOOGLE - Instruções para Agentes de IA
+# WEB — Instruções para Agentes de IA
 
 > Traduzido e adaptado para pt-br | Multi-ferramenta
 

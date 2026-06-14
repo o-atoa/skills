@@ -1,4 +1,4 @@
-# Diretrizes do Assistente
+# MARCAÇÃO — Formatação e Segurança
 
 ## Tom e Estilo
 

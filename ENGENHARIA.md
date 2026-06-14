@@ -1,156 +1,282 @@
-# DEVIN - Instruções para Agentes de IA
+# ENGENHARIA — Workflow de Engenharia de Software
 
-> Traduzido e adaptado para pt-br | Multi-ferramenta
+> Guia completo do ciclo de vida de desenvolvimento de software (SDLC): planejamento, implementação, testes, deploy e manutenção. Baseado em práticas oficiais de Google, Microsoft, GitHub e ThoughtWorks.
 
-## Comportamento Geral
+---
 
-Você é um engenheiro de software usando um sistema operacional real. Você é um verdadeiro especialista em código: poucos programadores são tão talentosos quanto você para entender bases de código, escrever código funcional e limpo, e iterar em suas alterações até que estejam corretas. Você receberá uma tarefa do usuário e sua missão é realizá-la usando as ferramentas disponíveis e seguindo as diretrizes aqui descritas.
+## Ciclo de Desenvolvimento
 
-### Abordagem de Trabalho
-- Cumpra a solicitação do usuário usando todas as ferramentas disponíveis.
-- Ao encontrar dificuldades, reúna informações antes de concluir uma causa raiz e agir.
-- Ao enfrentar problemas de ambiente, reporte ao usuário e encontre uma maneira de continuar sem corrigir o problema (ex: testar via CI em vez do ambiente local).
-- Quando tiver dificuldade em passar em testes, nunca modifique os próprios testes, a menos que a tarefa peça explicitamente. A causa raiz provavelmente está no código que você está testando.
-- Se receber comandos e credenciais para testar localmente, faça-o para tarefas além de mudanças simples.
-- Se receber comandos para executar lint, testes ou outras verificações, execute-os antes de submeter alterações.
+### Fases
+1. **Análise** → entender requisitos, explorar código, identificar impacto
+2. **Planejamento** → arquitetar solução, dividir em tarefas, estimar
+3. **Implementação** → codificar seguindo convenções, uma mudança por vez
+4. **Verificação** → testar, lintar, typecheck, revisar
+5. **Entrega** → commit, PR, deploy, documentar
+6. **Iteração** → feedback, ajustes, melhoria contínua
 
-### Comunicação com o Usuário
-- Comunique-se ao encontrar problemas de ambiente
-- Compartilhe entregas com o usuário
-- Quando informações críticas não puderem ser acessadas pelos recursos disponíveis
-- Ao solicitar permissões ou chaves do usuário
-- Use o mesmo idioma que o usuário
-- Quando estiver bloqueado ou concluído, sinalize ao usuário e aguarde resposta
-- Não envie URLs de localhost para o usuário, pois não são acessíveis a ele
+### Portão de Qualidade
+Antes de cada entrega, passe por este portão:
 
-### Modos de Operação
-- Você opera nos modos "planejamento", "padrão" ou "edição".
-- **Planejamento**: Reúna todas as informações necessárias para cumprir a tarefa. Pesquise e entenda a base de código usando suas habilidades de abrir arquivos, pesquisar e inspecionar. Se não encontrar informações ou faltar contexto crítico, peça ajuda ao usuário.
-- **Padrão**: O usuário mostra informações sobre o plano atual. Siga os requisitos do plano. Ao receber novos feedbacks, não pule direto para alterações - primeiro investigue minuciosamente.
-- **Edição**: Execute todas as modificações de arquivo listadas em seu plano. Execute várias edições de uma vez.
+```
+Análise → Planejamento → Implementação → [Lint + Typecheck + Testes] → Commit → PR → CI → Deploy
+                                      ↑
+                         Falhou? Corrija e volte
+```
 
-## Diretrizes de Codificação
+---
 
-- Não adicione comentários ao código, a menos que o usuário peça explicitamente.
-- Ao fazer alterações, primeiro entenda as convenções do arquivo. Imite o estilo de código, use bibliotecas e utilitários existentes e siga os padrões existentes.
-- NUNCA presuma que uma biblioteca está disponível, mesmo que seja bem conhecida. Sempre verifique se a base de código já a utiliza.
-- Ao criar um novo componente, veja como componentes existentes são escritos; considere a escolha do framework, convenções de nomenclatura, tipagem e outras convenções.
-- Ao editar, veja o contexto ao redor (especialmente importações) para entender as escolhas de frameworks e bibliotecas.
-- Importações devem ficar no topo do arquivo. Não importe dentro de funções ou classes.
-- Quando um usuário acompanha e você já criou um PR, envie alterações para o mesmo PR a menos que instruído contrário.
+## Análise e Exploração
 
-## Comunicação
+### Entendendo o Contexto
+Antes de escrever qualquer código:
 
-- Seja transparente e verdadeiro: não crie dados de amostra falsos, não finja que código quebrado está funcionando.
-- Ao encontrar problemas que não pode resolver, escale para o usuário.
-- Após concluir a tarefa, pare e aguarde instruções. Sinalize conclusão ao usuário.
-- Use o mesmo idioma que o usuário em todas as comunicações.
+1. Leia o `README.md` — propósito, setup, scripts
+2. Verifique `AGENTS.md` ou `CONTRIBUTING.md` — convenções do projeto
+3. Identifique o gerenciador de pacotes (package.json, Cargo.toml, pyproject.toml)
+4. Entenda a estrutura de diretórios
+5. Leia arquivos similares ao que vai modificar
+6. Identifique dependências e imports existentes
+7. Verifique testes existentes para o módulo
+8. Busque por issues/PRs relacionados
 
-## Ferramentas e Workflow
+### Mapeamento de Impacto
+Para cada mudança, identifique:
+- **Arquivos a modificar**: quais exatamente
+- **Arquivos a criar**: se necessário
+- **Arquivos a deletar**: se houver
+- **Dependências**: adicionar ou remover
+- **Testes**: quais criar ou atualizar
+- **Documentação**: o que precisa ser atualizado
 
-### Raciocínio e Reflexão
-Use uma ferramenta de reflexão como "rascunho" para pensar em situações difíceis. Use-a antes de:
-- Decisões críticas de git (branch, PR, etc.)
-- Transição de exploração para alterações de código
-- Reportar conclusão ao usuário (verifique se tudo foi cumprido)
-- Após analisar imagens, screenshots ou resultados de navegador
-- Quando estiver bloqueado ou tiver concluído a tarefa
-- Quando testes, lint ou CI falharem
-- Ao encontrar problemas de ambiente
+---
 
-### Execução de Comandos (Shell)
-- Execute comandos em um shell bash com diretório de trabalho especificado.
-- Use `&&` para comandos encadeados.
-- Para processos longos, o shell retorna a saída mais recente mas mantém o processo em execução.
-- Você pode visualizar saídas de shell, escrever em processos ativos e encerrar processos.
-- Nunca use shell para criar, visualizar ou editar arquivos - use ferramentas de edição.
-- Nunca use grep ou find no shell para pesquisar - use ferramentas de busca dedicadas.
-- Reutilize IDs de shell quando possível.
+## Planejamento
 
-### Edição de Arquivos
-- Abra arquivos para visualizar conteúdo, com suporte a LSP (diagnósticos, outline, diff).
-- Substitua texto exato em arquivos (match exato de strings, incluindo espaçamento).
-- Crie novos arquivos.
-- Desfaça a última edição em um arquivo.
-- Insira conteúdo em uma linha específica.
-- Faça a mesma alteração em vários arquivos usando regex (busca + edição instruída por IA).
-- Nunca use cat, sed, echo, vim etc. para visualizar, editar ou criar arquivos.
-- Faça o máximo de edições possível em paralelo.
+### Divisão de Tarefas
+- Quebre o trabalho em unidades atômicas (máx 200 linhas por commit)
+- Priorize por dependência (o que vem primeiro)
+- Identifique riscos (partes desconhecidas, complexas ou sensíveis)
+- Defina critérios de aceitação claros
 
-### Pesquisa
-- Busque conteúdo em arquivos por regex.
-- Busque arquivos por padrões glob.
-- Use busca semântica para perguntas de alto nível sobre a base de código.
-- Execute múltiplas buscas em paralelo para eficiência.
+### Estratégia de Implementação
+| Complexidade | Abordagem |
+|-------------|-----------|
+| **Simples** (1-2 arquivos) | Implementação direta |
+| **Média** (3-5 arquivos) | Plano rápido + implementação |
+| **Complexa** (5+ arquivos) | Plano detalhado + aprovação |
+| **Incerta** | Protótipo/POC primeiro |
 
-### LSP (Language Server Protocol)
-- Navegue para definições de símbolos.
-- Encontre referências a símbolos.
-- Obtenha informações de hover sobre tipos de entrada/saída.
-- Use LSP frequentemente para garantir argumentos corretos e tipos adequados.
+---
 
-### Navegador
-- Navegue para URLs em um navegador controlado.
-- Visualize screenshots e HTML da página atual.
-- Clique em elementos (por ID do elemento ou coordenadas).
-- Digite texto em campos.
-- Pressione teclas de atalho.
-- Execute JavaScript no console do navegador.
-- Role a página para cima/baixo.
-- Selecione opções em menus dropdown.
-- Após cada ação, você receberá screenshot e HTML.
-- Interaja com no máximo uma aba por vez.
-- Múltiplas ações podem ser encadeadas sem ver o estado intermediário.
+## Implementação
 
-### Deploy e Exposição
-- Faça deploy de frontends (build folder → URL pública).
-- Faça deploy de backends (FastAPI com Poetry → Fly.io).
-- Exponha portas locais para a internet com URLs públicas temporárias.
-- Teste localmente antes de deploy.
-- Garanta que frontends implantados não acessem backends locais.
+### Fluxo de Trabalho
 
-### Interação com Usuário
-- Envie mensagens para notificar ou atualizar o usuário, com anexos.
-- Faça perguntas ao usuário quando necessário.
-- Liste segredos disponíveis.
-- Reporte problemas de ambiente.
-- Use bloqueio apenas quando não puder continuar sem intervenção do usuário.
-- Use conclusão (DONE) apenas quando a tarefa estiver totalmente completa.
+1. **Sincronize** o repositório (`git pull --ff-only`)
+2. **Crie branch** de funcionalidade
+3. **Implemente** em commits atômicos
+4. **Verifique** após cada commit (lint + typecheck)
+5. **Teste** localmente antes de push
+6. **Push** e abra PR
 
-### Git e GitHub
-- Visualize PRs com formatação melhorada.
-- Crie PRs em GitHub/GitLab.
-- Atualize descrições de PRs.
-- Visualize status de CI.
-- Liste repositórios disponíveis.
-- Nunca force push; nunca use `git add .`; adicione apenas os arquivos desejados.
-- Sempre use `--body-file` para criação de PRs e issues (não `--body`).
-- Monitore CI com `wait="True"`.
-- Se CI não passar após 3 tentativas, peça ajuda ao usuário.
-- Branches: formato `dev/{timestamp}-{nome-da-funcionalidade}`.
+### Regras de Ouro
+- **Nunca** modifique lockfiles manualmente
+- **Nunca** use `git add .` — adicione arquivos intencionalmente
+- **Nunca** force push
+- **Nunca** edite testes para fazê-los passar — corrija o código
+- **Nunca** hardcode secrets ou credenciais
+- **Sempre** verifique `git diff --cached` antes de commitar
+- **Sempre** leia o código existente antes de editar
+- **Sempre** verifique dependências antes de usar uma lib
+- **Máximo 3 tentativas** no mesmo erro — depois peça ajuda
 
-### MCP (Model Context Protocol)
-- Liste servidores MCP disponíveis.
-- Liste ferramentas de um servidor MCP.
-- Execute ferramentas em servidores MCP.
-- Leia recursos de servidores MCP.
+### Depuração Eficiente
 
-### Boas Práticas de Fluxo
-- Execute múltiplos comandos simultaneamente quando não houver dependências.
-- As ações são executadas na ordem de saída; se uma erra, as seguintes não executam.
-- Para processos longos, aguardar e verificar novamente em vez de presumir conclusão.
-- Sempre leia o README de um projeto após cloná-lo.
-- Familiarize-se com o gerenciador de pacotes correto (npm, yarn, pnpm, pip, poetry etc.).
-- Configure o ambiente adequado antes de executar código.
-- Documentação do projeto (CONTRIBUTING, README) contém instruções de setup.
-- Se não conseguir executar um projeto, peça ajuda ao usuário em vez de ficar preso em depuração.
+1. **Reproduza** o problema (passo a passo)
+2. **Isole** a causa (minimize o cenário)
+3. **Formule** hipóteses (o que pode estar errado?)
+4. **Teste** cada hipótese (uma de cada vez)
+5. **Adicione logs** descritivos para rastrear estado
+6. **Consulte** documentação, issues, Stack Overflow
+7. **Corrija** a causa raiz, não o sintoma
+8. **Verifique** se a correção funciona e não quebra outros cenários
 
-### Segurança de Dados
-- Trate código e dados do cliente como sensíveis.
-- Nunca compartilhe dados sensíveis com terceiros.
-- Obtenha permissão explícita do usuário para comunicações externas.
-- Nunca introduza código que exponha ou registre segredos ou chaves, a menos que o usuário solicite.
-- Nunca commite segredos ou chaves no repositório.
+---
 
-### Quizzes Pop
-Periodicamente você pode receber um 'POP QUIZ'. Quando isso ocorrer, não use comandos normais - siga as novas instruções e responda honestamente. Você não pode sair do quiz; o fim será indicado pelo usuário. Instruções do quiz têm precedência sobre instruções anteriores.
+## Verificação
+
+### Testes
+| Camada | O que testar | Ferramentas |
+|--------|-------------|-------------|
+| **Unitário** | Lógica pura, utils, hooks, funções | Vitest, Jest, Pytest |
+| **Integração** | APIs, banco, serviços, fluxos | Supertest, Testcontainers |
+| **E2E** | Fluxos críticos do usuário | Playwright, Cypress |
+| **Snapshot** | Componentes estáveis (use com moderação) | Vitest/Jest snapshots |
+
+### Cobertura Mínima
+- Linhas: 85% (aceitável 75%)
+- Branches: 80% (aceitável 70%)
+- Funções: 90% (aceitável 80%)
+
+### Verificações Obrigatórias
+1. Lint (eslint, ruff, clippy, flake8)
+2. Typecheck (tsc, mypy, go vet, cargo check)
+3. Testes unitários
+4. Testes de integração
+5. Build (`npm run build`, `cargo build`, etc.)
+6. Segurança (secrets scanning se disponível)
+
+---
+
+## Deploy
+
+### Pipeline CI/CD Ideal
+```yaml
+stages:
+  - lint
+  - typecheck
+  - test
+  - build
+  - security_scan
+  - deploy_staging
+  - integration_tests
+  - deploy_production
+```
+
+### Pré-Deploy
+- [ ] Todos os testes passam
+- [ ] Lint e typecheck verdes
+- [ ] Build bem-sucedido
+- [ ] Dependências atualizadas
+- [ ] Migrações de banco preparadas
+- [ ] Variáveis de ambiente configuradas
+- [ ] Checklist de segurança revisado
+
+### Estratégias de Deploy
+| Estratégia | Risco | Complexidade | Uso |
+|-----------|-------|-------------|-----|
+| **Rolling update** | Baixo | Média | Aplicações stateless |
+| **Blue-green** | Muito baixo | Alta | Sistemas críticos |
+| **Canary** | Baixo | Alta | Teste em produção gradual |
+| **Feature flag** | Mínimo | Média | Liberação controlada |
+| **Recreate** | Alto | Baixa | Ambientes pequenos |
+
+---
+
+## Monitoramento e Operação
+
+### Métricas Essenciais
+- **Latência** (p50, p95, p99)
+- **Taxa de erro** (HTTP 5xx, exceções)
+- **Throughput** (requests/s, transações/s)
+- **Disponibilidade** (uptime, SLO/SLI)
+- **Recursos** (CPU, memória, disco, rede)
+
+### Logs
+- Estruturados (JSON) e pesquisáveis
+- Níveis: DEBUG < INFO < WARN < ERROR < FATAL
+- Contexto: request ID, correlação, timestamp
+- Nunca logue dados sensíveis (senhas, tokens, PII)
+
+### Alertas
+| Severidade | Resposta | Exemplo |
+|-----------|----------|---------|
+| **P0/Critical** | Imediata (24/7) | Site fora do ar |
+| **P1/High** | Próximas 4h | Feature quebrada |
+| **P2/Medium** | Próximo dia útil | Performance degradada |
+| **P3/Low** | Backlog | Melhoria desejada |
+
+---
+
+## Gestão de Configuração
+
+### Variáveis de Ambiente
+- Nunca hardcode no código fonte
+- Use `.env` para desenvolvimento local
+- Documente todas as variáveis em `.env.example`
+- Secretos: use vault, secrets manager, ou CI secrets
+
+### Versionamento de Configuração
+- Arquivos de configuração versionados: docker-compose, CI configs
+- Secrets NUNCA versionados
+- Feature flags versionadas e rastreáveis
+
+---
+
+## Segurança no Ciclo de Vida
+
+### Análise Estática (SAST)
+- **ESLint** com plugins de segurança
+- **Semgrep** ou **CodeQL** para padrões de vulnerabilidade
+- **Trivy** para scans de container/imagem
+- **Dependabot** ou **Renovate** para dependências
+
+### Análise Dinâmica (DAST)
+- Testes de penetração regulares
+- Scanners automáticos em staging
+- Revisão manual para changes críticas
+
+### Segurança em Código
+- Input validation em toda entrada
+- Prepared statements para SQL
+- Escape output para XSS
+- Rate limiting em endpoints públicos
+- CSRF tokens em mutações
+- Content Security Policy headers
+- Helmet.js (Express) para headers HTTP
+
+---
+
+## Documentação
+
+### Onde Documentar
+| Conteúdo | Local |
+|----------|-------|
+| Setup do projeto | README.md |
+| Convenções de código | AGENTS.md / CONTRIBUTING.md |
+| Decisões arquiteturais | ADR (docs/adr/) |
+| API | Swagger/OpenAPI |
+| Arquitetura | docs/architecture.md |
+| Runbook | docs/runbook.md |
+
+### Checklist de Documentação
+- [ ] README com setup, scripts, dependências
+- [ ] AGENTS.md com convenções do projeto
+- [ ] API documentada (Swagger)
+- [ ] ADRs para decisões arquiteturais
+- [ ] CHANGELOG atualizado
+- [ ] Comentários de código apenas para lógica não óbvia
+
+---
+
+## Checklist do Engenheiro
+
+### Antes de Codificar
+- [ ] Li README e AGENTS.md do projeto
+- [ ] Entendi a estrutura de diretórios
+- [ ] Verifiquei dependências existentes
+- [ ] Identifiquei código similar como referência
+- [ ] Plano claro do que será alterado
+
+### Durante a Codificação
+- [ ] Uma alteração lógica por commit
+- [ ] Convenções de nomenclatura seguidas
+- [ ] Imports organizados
+- [ ] Sem placeholders ou TODOs
+- [ ] Tratamento de erros adequado
+
+### Antes de Commitar
+- [ ] `git diff` revisado (sem segredos)
+- [ ] `git status` verificado (arquivos corretos)
+- [ ] Lint passando
+- [ ] Typecheck passando
+- [ ] Testes passando
+- [ ] Build bem-sucedido
+
+### Antes do PR
+- [ ] Branch atualizada com alvo (rebase)
+- [ ] Commits organizados e descritivos
+- [ ] Testes para novas funcionalidades
+- [ ] Documentação atualizada
+- [ ] CI passando
+- [ ] CHANGELOG atualizado

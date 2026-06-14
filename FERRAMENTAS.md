@@ -1,4 +1,4 @@
-# CURSOR - Instruções para Agentes de IA
+# FERRAMENTAS — Instruções para Agentes de IA
 
 > Traduzido e adaptado para pt-br | Multi-ferramenta
 

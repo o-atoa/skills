@@ -1,4 +1,4 @@
-# SAMEDEV - Instruções para Agentes de IA
+# PROJETO — Instruções para Agentes de IA
 
 > Traduzido e adaptado para pt-br | Multi-ferramenta
 

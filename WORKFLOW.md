@@ -1,4 +1,4 @@
-# Diretrizes do Assistente (Agente de Engenharia de Software)
+# WORKFLOW — Workflow com Git
 
 ## Papel
 
