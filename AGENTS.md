@@ -176,19 +176,19 @@ Este repositório contém skills em pt-br para orientar agentes de IA. Siga esta
 ```
 /
 ├── AGENTS.md              ← este arquivo (instruções padrão)
-├── skills.md              ← índice principal de skills
+├── SKILLS.md              ← índice principal de skills
 ├── ISSUES.md              ← skill para issues
 ├── PR.md                  ← skill para pull requests
 ├── TESTS.md               ← skill para testes
 ├── ARQUITETURA.md         ← skill para arquitetura
-├── ANTHROPIC.md           ← prompts adaptados da Anthropic
-├── OPENAI.md              ← prompts adaptados da OpenAI
-├── DEVIN.md               ← prompts adaptados da Devin
-├── ... (demais vendors)
+├── COMPORTAMENTO.md       ← comportamento geral e comunicação
+├── CÓDIGO.md              ← estilo de código e documentação
+├── ENGENHARIA.md          ← workflow de engenharia e git
+├── ... (demais skills genéricas)
 └── opencode.json          ← configuração do opencode para o projeto
 ```
 
-Skills específicas de workflow estão em arquivos individuais na raiz. Consulte `skills.md` para navegação completa.
+Skills específicas de workflow estão em arquivos individuais na raiz. Consulte `SKILLS.md` para navegação completa.
 
 Skills instaladas para descoberta automática pelo opencode ficam em `~/.config/opencode/skills/`. Cada skill é um diretório com `SKILL.md` contendo frontmatter YAML. A configuração global (`opencode.jsonc`) e do projeto (`opencode.json`) definem agentes, instruções e caminhos de skills.
 
