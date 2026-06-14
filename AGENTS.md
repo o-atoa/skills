@@ -175,17 +175,19 @@ Este repositório contém skills em pt-br para orientar agentes de IA. Siga esta
 
 ```
 /
-├── AGENTS.md              ← este arquivo (instruções padrão)
-├── SKILLS.md              ← índice principal de skills
-├── ISSUES.md              ← skill para issues
-├── PR.md                  ← skill para pull requests
-├── TESTS.md               ← skill para testes
-├── ARQUITETURA.md         ← skill para arquitetura
-├── COMPORTAMENTO.md       ← comportamento geral e comunicação
-├── CÓDIGO.md              ← estilo de código e documentação
-├── ENGENHARIA.md          ← workflow de engenharia e git
-├── ... (demais skills genéricas)
-└── opencode.json          ← configuração do opencode para o projeto
+├── AGENTS.md              ← este arquivo (instruções mestre, 214 linhas)
+├── SKILLS.md              ← índice principal com descrições e metadados
+├── ARQUITETURA.md         ← arquitetura: padrões, DDD, C4, ADRs (445 linhas)
+├── TESTS.md               ← testes: pirâmide, TDD, property-based, mutação (442 linhas)
+├── RAZAO.md               ← raciocínio: lógica, frameworks, decisão (465 linhas)
+├── TECNICO.md             ← precisão técnica: algoritmos, sistemas, APIs (539 linhas)
+├── MARCACAO.md            ← markdown avançado, docs, diagramas, segurança (553 linhas)
+├── DADOS.md               ← bancos: modelagem, SQL, migrações, perf (295 linhas)
+├── PESQUISA.md            ← pesquisa: método científico, fontes, vieses (251 linhas)
+├── DIRETO.md              ← concisão: templates, máxima densidade (203 linhas)
+├── VOZ.md                 ← voz: emoção, prosódia, reparo, acessibilidade (211 linhas)
+├── ... (demais 20 skills, todas enriquecidas)
+└── 6.889 linhas totais em 31 arquivos
 ```
 
 Skills específicas de workflow estão em arquivos individuais na raiz. Consulte `SKILLS.md` para navegação completa.
@@ -194,7 +196,25 @@ Skills instaladas para descoberta automática pelo opencode ficam em `~/.config/
 
 ---
 
-## 9. Lembretes Rápidos
+## 9. Skills Disponíveis
+
+Este repositório contém **31 skills enriquecidas** com conteúdo condensado de 30+ sistemas de prompting. As 7 skills mais densas são:
+
+| Skill | Foco | Linhas |
+|-------|------|-------:|
+| `MARCACAO.md` | Markdown, documentação, diagramas, segurança | 553 |
+| `TECNICO.md` | Algoritmos, sistemas, APIs, performance | 539 |
+| `RAZAO.md` | Lógica, frameworks de decisão, vieses | 465 |
+| `ARQUITETURA.md` | Padrões, DDD, C4, ADRs | 445 |
+| `TESTS.md` | Testes, TDD, property-based, mutação | 442 |
+| `DADOS.md` | Modelagem, SQL, bancos, backend | 295 |
+| `PESQUISA.md` | Método científico, fontes, vieses | 251 |
+
+Carregue a skill relevante com a ferramenta `skill` ou referencie o caminho no prompt. Consulte `SKILLS.md` para o índice completo.
+
+---
+
+## 10. Lembretes Rápidos
 
 | Situação | Ação |
 |----------|------|
