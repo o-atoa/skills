@@ -20,9 +20,9 @@ Orientar agentes de IA na escrita, execução e manutenção de testes de softwa
 
 | Tipo | Velocidade | Cobertura | Manutenção | Onde usar |
 |------|-----------|-----------|------------|-----------|
-| Unitário | ⚡ Rápido | Pequena | Baixa | Lógica pura, utils, hooks |
-| Integração | 🐢 Médio | Média | Média | APIs, banco, serviços |
-| E2E | 🐌 Lento | Alta | Alta | Fluxos críticos do usuário |
+| Unitário | Rápido | Pequena | Baixa | Lógica pura, utils, hooks |
+| Integração | Médio | Média | Média | APIs, banco, serviços |
+| E2E | Lento | Alta | Alta | Fluxos críticos do usuário |
 
 ## Convenções
 
@@ -46,9 +46,9 @@ it('deve calcular desconto VIP', () => {
 
 ## O que testar
 
-✅ **Alta**: lógica de negócio, bordas, erros, contratos
-⚠️ **Média**: integração DB, serviços externos, snapshots
-❌ **Evitar**: frameworks, getters/setters, implementação
+**Alta**: lógica de negócio, bordas, erros, contratos
+**Média**: integração DB, serviços externos, snapshots
+**Evitar**: frameworks, getters/setters, implementação
 
 | Cobertura | Alvo | Aceitável |
 |-----------|------|-----------|
@@ -64,10 +64,10 @@ it('deve calcular desconto VIP', () => {
 4. Evite mocks deep — prefira injeção de dependência
 
 ```typescript
-// ✅ Mock na fronteira
+// Mock na fronteira
 const emailService = { send: vi.fn().mockResolvedValue(true) }
 const auth = new AuthService(emailService)
-// ❌ Mock de lib externa
+// Mock de lib externa (evitar)
 vi.mock('bcrypt')
 ```
 
@@ -198,7 +198,7 @@ Mesmo padrão: lint, typecheck, review, sem duplicação.
 - **DRY** no setup/helpers | **DAMP** no corpo do teste (legibilidade > abstração)
 
 ```typescript
-// ✅ DAMP: claro o que testa
+// DAMP: claro o que testa
 it('deve negar pagamento com cartão vencido', () => {
   expect(() => processar(new Cartao('1234', mesPassado, anoPassado, '123')))
     .toThrow('Cartão vencido')
@@ -273,9 +273,9 @@ Execute apenas testes que cobrem código alterado. Ferramentas: `jest --onlyChan
 
 ### Red-Green-Refactor
 ```
-🔴 RED:   escreva teste que falhe
-🟢 GREEN: código mínimo para passar
-🔵 REFACTOR: melhore mantendo testes verdes
+RED:   escreva teste que falhe
+GREEN: código mínimo para passar
+REFACTOR: melhore mantendo testes verdes
 ```
 
 ### Regras
@@ -293,8 +293,8 @@ Execute apenas testes que cobrem código alterado. Ferramentas: `jest --onlyChan
 London: arquitetura hexagonal, CQRS. Detroit: domínio rico, algoritmos.
 
 ### Quando TDD funciona
-✅ Regras de negócio, algoritmos, validações, parsers, APIs REST
-❌ UI exploratória, prototipação, código legado sem testes
+**Adequado**: Regras de negócio, algoritmos, validações, parsers, APIs REST
+**Inadequado**: UI exploratória, prototipação, código legado sem testes
 
 ## BDD e Testes de Aceitação
 

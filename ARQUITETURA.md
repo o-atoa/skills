@@ -31,10 +31,10 @@ Descreva a decisão tomada. Use linguagem clara e direta.
 "Decidimos por [opção X] porque [motivo principal]."
 
 ## Consequências
-- ✅ [Impacto positivo 1]
-- ✅ [Impacto positivo 2]
-- ❌ [Impacto negativo 1 / trade-off]
-- ⚠️ [Risco ou consideração futura]
+- [Impacto positivo 1]
+- [Impacto positivo 2]
+- [Impacto negativo 1 / trade-off]
+- [Risco ou consideração futura]
 
 ## Alternativas Consideradas
 ### Opção A: [nome]
@@ -396,12 +396,12 @@ Passo a passo com análise de trade-offs:
            Baixa Coesão ←────────→ Alta Coesão
                │                        │
  Baixo         │                        │
- Acoplamento   │    ⚠️ Médio            │ ✅ Ideal
+  Acoplamento   │    Médio               │ Ideal
      ↑         │                        │
      │         │                        │
      │         │                        │
  Alto          │                        │
- Acoplamento   │    ❌ Ruim             │    ⚠️ Médio
+  Acoplamento   │    Ruim                │    Médio
                │                        │
 ```
 

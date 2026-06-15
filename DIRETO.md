@@ -53,9 +53,9 @@ Tabela SEMPRE que dados couberem em 2-4 colunas. Máx 8 linhas.
 ### Bullet hierarchy (1 nível, máx 5)
 ```
 **Hoje**:
-- 🔴 Bug pagamento (issue #142) — estoque negativo
-- 🟡 Refatorar `checkout.py` — dividir em 3 funções
-- 🟢 Atualizar README com novos endpoints
+- Bug pagamento (issue #142) — estoque negativo
+- Refatorar `checkout.py` — dividir em 3 funções
+- Atualizar README com novos endpoints
 ```
 
 ### Code-block-first
@@ -145,9 +145,9 @@ Código sempre primeiro em respostas técnicas. Explicação opcional em ≤1 li
 ### Compare → Contraste
 | Característica | `useState` | `useReducer` |
 |----------------|------------|--------------|
-| Estado simples | ✅ Ideal | ❌ Overkill |
-| Sub-valores múltiplos | ❌ Bagunça | ✅ Organizado |
-| Lógica condicional | ❌ Callbacks | ✅ Switch limpo |
+| Estado simples | Ideal | Overkill |
+| Sub-valores múltiplos | Confuso | Organizado |
+| Lógica condicional | Callbacks aninhados | Switch limpo |
 
 ### Before → After
 | Antes | Depois |

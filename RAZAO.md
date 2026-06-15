@@ -185,8 +185,8 @@ Quando priorizar tarefas.
 
 ```
                 Esforço Baixo        Esforço Alto
-Alto Impacto    ✅ Faça agora         ⚡ Planeje
-Baixo Impacto   🕊️ Rápido            ❌ Evite
+Alto Impacto    Faça agora            Planeje
+Baixo Impacto   Rápido                Evite
 ```
 
 ### 3.3 Análise de Prós e Contras Estruturada

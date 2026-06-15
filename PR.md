@@ -74,8 +74,8 @@ chore(escopo): descrição
 2. **Explique o porquê** — sugira *por que* algo deveria mudar
 3. **Use `suggestion`** no GitHub para oferecer código pronto
 4. **Diferencie blockers de nits**:
-   - **Blocker** 🚫: bug, segurança, quebra de contrato — precisa ser resolvido
-   - **Nit** 💅: estilo, preferência pessoal — pode ser ignorado
+   - **Blocker**: bug, segurança, quebra de contrato — precisa ser resolvido
+   - **Nit**: estilo, preferência pessoal — pode ser ignorado
 5. **Aprove ou solicite mudanças** claramente — use o GitHub Review
 
 ### Exemplo de Review Construtivo
@@ -83,10 +83,10 @@ chore(escopo): descrição
 ```markdown
 Boa implementação! Alguns pontos:
 
-🚫 Blocker: A senha está sendo logada em caso de erro (linha 42). 
+**Blocker**: A senha está sendo logada em caso de erro (linha 42). 
 Vazamento de informação sensível. Sugiro remover ou mascarar.
 
-💅 Nit: O nome da função `process_data` é genérico. Que tal 
+**Nit**: O nome da função `process_data` é genérico. Que tal 
 `validate_user_input` para ser mais descritivo?
 ```
 

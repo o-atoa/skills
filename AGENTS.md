@@ -175,19 +175,38 @@ Este repositório contém skills em pt-br para orientar agentes de IA. Siga esta
 
 ```
 /
-├── AGENTS.md              ← este arquivo (instruções mestre, 214 linhas)
+├── AGENTS.md              ← este arquivo (instruções mestre, 234 linhas)
 ├── SKILLS.md              ← índice principal com descrições e metadados
-├── ARQUITETURA.md         ← arquitetura: padrões, DDD, C4, ADRs (445 linhas)
-├── TESTS.md               ← testes: pirâmide, TDD, property-based, mutação (442 linhas)
-├── RAZAO.md               ← raciocínio: lógica, frameworks, decisão (465 linhas)
-├── TECNICO.md             ← precisão técnica: algoritmos, sistemas, APIs (539 linhas)
-├── MARCACAO.md            ← markdown avançado, docs, diagramas, segurança (553 linhas)
-├── DADOS.md               ← bancos: modelagem, SQL, migrações, perf (295 linhas)
-├── PESQUISA.md            ← pesquisa: método científico, fontes, vieses (251 linhas)
-├── DIRETO.md              ← concisão: templates, máxima densidade (203 linhas)
-├── VOZ.md                 ← voz: emoção, prosódia, reparo, acessibilidade (211 linhas)
-├── ... (demais 20 skills, todas enriquecidas)
-└── 6.889 linhas totais em 31 arquivos
+├── MARCACAO.md            ← markdown avançado, docs, diagramas, segurança (553)
+├── TECNICO.md             ← algoritmos, sistemas, APIs, performance (539)
+├── RAZAO.md               ← lógica, frameworks de decisão, vieses (465)
+├── ARQUITETURA.md         ← padrões, DDD, C4, ADRs (445)
+├── TESTS.md               ← testes, TDD, property-based, mutação (442)
+├── DADOS.md               ← modelagem, SQL, migrações, perf (295)
+├── ENGENHARIA.md          ← SDLC, deploy, monitoria, segurança (282)
+├── WEB.md                 ← HTML/CSS, React, Tailwind, jogos (271)
+├── FONTES.md              ← avaliação de fontes, CRAAP, fact-checking (268)
+├── CODIGO.md              ← estilo, nomenclatura, segurança (258)
+├── WORKFLOW.md            ← git workflow, qualidade, PR (253)
+├── PESQUISA.md            ← método científico, fontes, vieses (251)
+├── COMPORTAMENTO.md       ← postura, comunicação, ética (246)
+├── AUTOMACAO.md           ← automação navegador, extração (241)
+├── TEXTO.md               ← escrita colaborativa, citações (233)
+├── APPS.md                ← editor apps web, UI/UX (219)
+├── VOZ.md                 ← voz, emoção, prosódia (211)
+├── NAVEGAR.md             ← navegação web, multimodal (211)
+├── EDICAO.md              ← edição arquivos, SEARCH/REPLACE (211)
+├── CONVERSA.md            ← conversação, tom, valores (204)
+├── DIRETO.md              ← concisão, templates (203)
+├── AGENTE.md              ← agente autônomo completo (188)
+├── CONTEXTO.md            ← memória persistente, contexto (172)
+├── PROJETO.md             ← inicialização projetos, deploy (166)
+├── PR.md                  ← pull requests, revisão (166)
+├── FERRAMENTAS.md         ← busca, terminal, regex (150)
+├── ISSUES.md              ← issues, labels, CLI (148)
+├── INTERFACE.md           ← componentes MDX, UI (146)
+├── ITERAR.md              ← desenvolvimento iterativo (132)
+└── 7.951 linhas totais em 31 arquivos
 ```
 
 Skills específicas de workflow estão em arquivos individuais na raiz. Consulte `SKILLS.md` para navegação completa.
@@ -198,7 +217,7 @@ Skills instaladas para descoberta automática pelo opencode ficam em `~/.config/
 
 ## 9. Skills Disponíveis
 
-Este repositório contém **31 skills enriquecidas** com conteúdo condensado de 30+ sistemas de prompting. As 7 skills mais densas são:
+Este repositório contém **31 skills enriquecidas** com conteúdo condensado de 30+ sistemas de prompting. As 10 skills mais densas são:
 
 | Skill | Foco | Linhas |
 |-------|------|-------:|
@@ -208,7 +227,10 @@ Este repositório contém **31 skills enriquecidas** com conteúdo condensado de
 | `ARQUITETURA.md` | Padrões, DDD, C4, ADRs | 445 |
 | `TESTS.md` | Testes, TDD, property-based, mutação | 442 |
 | `DADOS.md` | Modelagem, SQL, bancos, backend | 295 |
-| `PESQUISA.md` | Método científico, fontes, vieses | 251 |
+| `ENGENHARIA.md` | SDLC, deploy, monitoria, segurança | 282 |
+| `WEB.md` | HTML/CSS, React, Tailwind, jogos | 271 |
+| `FONTES.md` | Avaliação de fontes, CRAAP, fact-checking | 268 |
+| `CODIGO.md` | Estilo, nomenclatura, segurança | 258 |
 
 Carregue a skill relevante com a ferramenta `skill` ou referencie o caminho no prompt. Consulte `SKILLS.md` para o índice completo.
 
