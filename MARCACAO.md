@@ -263,7 +263,7 @@ docs/
 Ou use o `README.md` principal como índice:
 
 ```markdown
-Idiomas disponíveis: [🇧🇷 Português](docs/pt-BR/) · [🇺🇸 English](docs/en/) · [🇯🇵 日本語](docs/ja/)
+Idiomas disponíveis: [Português (pt-BR)](docs/pt-BR/) · [English (en)](docs/en/) · [日本語 (ja)](docs/ja/)
 ```
 
 ### Versioning Documentation
@@ -358,8 +358,8 @@ Ruim: `clique aqui` ou `veja mais`.
 Bom: `veja o guia de contribuição` ou `leia a documentação da API`.
 
 ```markdown
-- ✅ [Documentação da API REST](/api)
-- ❌ [Clique aqui](/api)
+- [Documentação da API REST](/api) (bom)
+- [Clique aqui](/api) (ruim)
 ```
 
 ### Color Contrast
@@ -399,9 +399,9 @@ Editores de Markdown normalmente sanitizam HTML. Se seu renderizador aceita HTML
 Nunca coloque tokens, senhas, API keys ou chaves privadas em arquivos Markdown:
 
 ```markdown
-❌ GH_TOKEN=ghp_xxxxxxxxxxxx
-❌ aws_access_key_id=AKIAxxxxxx
-✅ Use variáveis de ambiente: `process.env.API_KEY`
+GH_TOKEN=ghp_xxxxxxxxxxxx (evitar)
+aws_access_key_id=AKIAxxxxxx (evitar)
+Use variáveis de ambiente: `process.env.API_KEY` (correto)
 ```
 
 Adicione `.md` ao `.gitignore` de secrets ou use `git-secrets` para prevenir leaks.
@@ -427,8 +427,8 @@ Isso bloqueia inline scripts e imagens externas — importante para segurança.
 Nunca use `javascript:` em links:
 
 ```markdown
-❌ [clique](javascript:alert(1))
-✅ [link seguro](https://exemplo.com)
+[clique](javascript:alert(1)) (evitar)
+[link seguro](https://exemplo.com) (correto)
 ```
 
 Configure validação no linter: `markdownlint rule MD034` (bare URLs) e extensão customizada para proibir protocolos perigosos.

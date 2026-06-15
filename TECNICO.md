@@ -167,7 +167,7 @@ Número de servidores = QPS / capacidade_por_servidor * fator_redundância
 
 #### Nomenclatura de Endpoints
 ```
-✅ Boas práticas:
+Boas práticas:
 GET    /users                    → Listar usuários
 GET    /users/:id                → Buscar usuário
 POST   /users                    → Criar usuário
@@ -177,7 +177,7 @@ DELETE /users/:id                → Remover usuário
 GET    /users/:id/orders         → Relacionamento (1:N)
 GET    /users/:id/orders/:orderId → Relacionamento aninhado
 
-❌ Evitar:
+Evitar:
 GET    /getUsers                 → Verbos na URL
 POST   /updateUser               → Verbos na URL
 DELETE /deleteUser?id=123        → Query params para identidade
@@ -428,10 +428,10 @@ Motivos: (1) Maturidade, (2) JSONB para dados semi-estruturados,
 (3) Replicação nativa, (4) TimescaleDB extension para séries temporais.
 
 Consequências:
-✅ Transações ACID fortes
-✅ Ecossistema maduro (ORM, ferramentas, hosting)
-⚠️ Custo operacional maior que SQLite
-❌ Não escala horizontalmente como Cassandra
++ Transações ACID fortes
++ Ecossistema maduro (ORM, ferramentas, hosting)
+~ Custo operacional maior que SQLite
+- Não escala horizontalmente como Cassandra
 
 Alternativas:
 - MySQL (rejeitado: JSON support inferior, replication lag)

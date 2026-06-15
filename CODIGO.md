@@ -78,7 +78,7 @@ projeto/
 6. Prefira imports absolutos (com alias) sobre relativos profundos
 
 ```typescript
-// ✅ Boa prática
+// Boa prática
 import { z } from 'zod'
 import { clsx } from 'clsx'
 
@@ -88,7 +88,7 @@ import { formatDate } from '@/utils/date'
 import { UserCard } from './user-card'
 import { useAuth } from './use-auth'
 
-// ❌ Evitar
+// Evitar
 import { formatDate } from '../../../../utils/date'
 ```
 
@@ -104,7 +104,7 @@ import { formatDate } from '../../../../utils/date'
 - **Async**: sempre usar async/await, não callbacks ou .then()
 
 ```typescript
-// ✅ Boa prática
+// Boa prática
 interface SearchParams {
   query: string
   limit?: number
@@ -116,7 +116,7 @@ async function searchUsers(params: SearchParams): Promise<User[]> {
   return db.user.findMany({ where: { name: query }, take: limit, skip: offset })
 }
 
-// ❌ Evitar
+// Evitar
 function searchUsers(query: string, limit?: number, offset?: number, sortBy?: string, order?: string) {
   // mais de 3 parâmetros
 }
@@ -151,7 +151,7 @@ describe('AuthService', () => {
 
 ### Padrão Geral
 ```typescript
-// ✅ Tratamento adequado
+// Tratamento adequado
 async function getUser(id: string): Promise<User> {
   try {
     const user = await db.user.findUnique({ where: { id } })
@@ -183,7 +183,7 @@ async function getUser(id: string): Promise<User> {
 - Prefira `interface` para objetos públicos, `type` para uniões
 
 ```typescript
-// ✅ Type-first
+// Type-first
 type UserStatus = 'active' | 'inactive' | 'suspended'
 
 interface User {
@@ -193,7 +193,7 @@ interface User {
   createdAt: Date
 }
 
-// ❌ Evitar
+// Evitar
 const user: any = getUser()
 ```
 
